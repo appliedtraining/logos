@@ -1,27 +1,20 @@
 #!/bin/bash
 
 BUILD_PATH='build'
-
-get_folder_name() {
-    if [ "$#" -gt 0 ]
-    then
-        echo $1
-    else
-        echo 'blue'
-    fi
-}
+APPS=(console hire insight learn perform) 
+SIZES=(16 32 64 128 256 512)
 
 print_usage() {
     echo ''
-    echo -e "Usage: ./generate-png.sh [app_name: console | hire | insight | learn | perform]"
+    echo -e "Usage: ./generate-png.sh"
     echo ''
 }
 
 ensure_folder() {
-    if [[ ! -d "$BUILD_PATH/$1" ]]
+    if [[ ! -d $1 ]]
     then
-        echo 'folder "$BUILD_PATH/$1" does not exist. Creating it.'
-        mkdir "$BUILD_PATH/$1"
+        echo 'folder $1 does not exist. Creating it.'
+        mkdir -p $1
     fi
 }
 
@@ -29,13 +22,15 @@ if [[ $1 == '-h' ]]
 then
     print_usage
 else
-    sizes=(16 32 64 128 256 512)
-    folder_name=`get_folder_name $@`
-
-    ensure_folder $folder_name
-
-    for size in "${sizes[@]}"
+    for app in "${APPS[@]}"
     do
-        inkscape --export-area-drawing --export-png "$BUILD_PATH/$folder_name/png/$size.png" -w $size "src/$folder_name/logo.svg"
+        folder_path="$BUILD_PATH/$app/png"
+        ensure_folder $folder_path
+
+        for size in "${SIZES[@]}"
+        do
+            inkscape --export-filename="$folder_path/$size.png" -w $size --export-area-drawing "src/$app/logo.svg"
+        done
     done
+
 fi
