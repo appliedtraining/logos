@@ -10,7 +10,7 @@ Source vector file &amp; multiple color &amp; size variants of trakstar applicat
 
 ### Install 
 1. Clone repo
-2. `brew tap homebrew/cask && brew install --cask inkscape`
+2. `brew tap homebrew/cask && brew install --cask inkscape && brew install libmagic`
 
 ### Usage
 run `./generate-png.sh <app-name: console | hire | learn>` 
