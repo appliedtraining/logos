@@ -25,8 +25,10 @@ npm install @appliedtraining/logos
 2. `brew tap homebrew/cask && brew install --cask inkscape && brew install libmagic`
 
 ### Usage
-run `./generate-png.sh <app-name: console | hire | learn>` 
-    > eg `./generate-png.sh console`  
+run `./generate-png.sh` 
+    > eg `./generate-png.sh`
+
+This will build all the png for all the apps
 
 
 
