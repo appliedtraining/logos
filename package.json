@@ -1,0 +1,22 @@
+{
+  "name": "@appliedtraining/logos",
+  "version": "0.1.0",
+  "description": "All the trakstar application logos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appliedtraining/logos.git"
+  },
+  "keywords": [
+    "logos"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/appliedtraining/logos/issues"
+  },
+  "homepage": "https://github.com/appliedtraining/logos#readme"
+}
